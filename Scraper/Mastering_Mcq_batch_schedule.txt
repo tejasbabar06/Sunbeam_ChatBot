@@ -1,4 +1,4 @@
-BATCH SCHEDULE 
+Mastering Mcq batch schedule 
 =======================================================
 
 Batch No    : 1

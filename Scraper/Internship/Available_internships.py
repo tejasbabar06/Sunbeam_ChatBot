@@ -22,6 +22,7 @@ table = driver.find_element(By.XPATH, "//div[@id='collapseSix']//table")
 rows = table.find_elements(By.TAG_NAME, "tr")
 
 with open("Available_internships.txt", "w", encoding="utf-8") as f:
+    f.write("Available_internships")
     for row in rows:
         cols = row.find_elements(By.TAG_NAME, "td")
         if cols:

@@ -1,4 +1,4 @@
-GENERAL INFORMATION
+devops.txtGENERAL INFORMATION
 Course Name : Dev Ops
 Batch Schedule : 15-Sep-2025   To   20-Nov-2025
 Schedule : Mon - Thu

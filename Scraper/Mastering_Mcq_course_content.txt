@@ -1,4 +1,4 @@
-Course Contents:
+Mastering Mcq course content:
 Aptitude, Reasoning, English
 Computer Fundamentals & Concepts of Programming
 C Programming, C++

@@ -1,4 +1,4 @@
-GENERAL INFORMATION
+aptitude_course.txtGENERAL INFORMATION
 Course Name : Aptitude  
 Batch Schedule : 02-Feb-2026   To   23-Feb-2026
 Schedule : Mon - Fri

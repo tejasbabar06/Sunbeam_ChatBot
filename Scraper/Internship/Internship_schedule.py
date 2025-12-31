@@ -29,6 +29,7 @@ for rows in table_rows:
 
 driver.quit()
 with open("internship_schedule.txt", "w", encoding="utf-8") as f:
+    f.write("Internship Schedule")
     for i, item in enumerate(info_list, start=1):
         f.write(f"Record {i}\n")
         for key, value in item.items():

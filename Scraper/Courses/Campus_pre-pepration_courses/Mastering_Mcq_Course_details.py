@@ -16,6 +16,7 @@ print("Page Title:", driver.title)
 elements = driver.find_elements(By.CLASS_NAME, "course_info")
 
 with open("Mastering_Mcq_Course_details.txt", "w", encoding="utf-8") as f:
+    f.write("Mastering Mcq Course details")
     for el in elements:
         text = el.text.strip()
         if text:

@@ -1,4 +1,4 @@
-GENERAL INFORMATION
+machine_learning.txtGENERAL INFORMATION
 Course Name : Machine Learning
 Batch Schedule : 26-Oct-2023   To   28-Nov-2023
 Schedule : Weekdays - (Mon -Fri)

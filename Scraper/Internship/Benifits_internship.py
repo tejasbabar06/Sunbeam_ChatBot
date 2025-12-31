@@ -26,6 +26,7 @@ text = element.get_attribute("innerText").strip()
 
 with open("Benifits_internship.txt", "w", encoding="utf-8") as f:
     if text:
+        f.write("Benifits internship")
         f.write(text)
 
 print("Data saved to Internship_CollapseFour.txt")

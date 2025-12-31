@@ -57,6 +57,7 @@ except:
     link = "Not Available"
 
 with open("Pre_cat_BatchSchedule.txt", "a", encoding="utf-8") as f:
+    f.write("Pre cat BatchSchedule")
     f.write("\nRegister Link:\n")
     f.write(link)
 

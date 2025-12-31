@@ -1,4 +1,4 @@
-GENERAL INFORMATION
+mlops_llmops.txtGENERAL INFORMATION
 Course Name : MLOps & LLMOps
 Batch Schedule : 24-Nov-2025   To   05-Dec-2025
 Schedule : Monday to Friday (9pm to 11pm)

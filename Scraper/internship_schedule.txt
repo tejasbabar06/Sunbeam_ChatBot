@@ -1,4 +1,4 @@
-Record 1
+Internship ScheduleRecord 1
 Batch: IIT-08-H-A-MERN
 Batch Duration: 1 Month
 Start Date: 10-Dec-2025

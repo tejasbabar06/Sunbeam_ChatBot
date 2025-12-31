@@ -23,7 +23,7 @@ rows = driver.find_elements(
 )
 
 with open("Mastering_Mcq_batch_schedule.txt", "w", encoding="utf-8") as file:
-    file.write("BATCH SCHEDULE \n")
+    file.write("Mastering Mcq batch schedule \n")
     file.write("=" * 55 + "\n\n")
 
     for row in rows:

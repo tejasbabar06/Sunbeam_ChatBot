@@ -1,4 +1,4 @@
-GENERAL INFORMATION
+apache_spark_mastery.txtGENERAL INFORMATION
 Course Name : Apache Spark Mastery - Data Engineering with PySpark
 Batch Schedule : 16-Aug-2025   To   17-Sep-2025
 Schedule : Mon-Sat

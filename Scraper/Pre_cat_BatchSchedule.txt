@@ -25,6 +25,6 @@ End Date     : 05-May-2026
 Timing       : 9:00 AM  To                                         1:00 PM
 Fees         : 17600/-
 ---------------------------------------------
-
+Pre cat BatchSchedule
 Register Link:
 http://admission.sunbeaminfo.com/aspx/CourseSchedule.aspx

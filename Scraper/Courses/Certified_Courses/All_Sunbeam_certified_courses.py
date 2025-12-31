@@ -107,6 +107,7 @@ def scrape_modular_courses(URL, course_name, output_filename):
                     pass
 
         with open(output_filename, "w", encoding="utf-8") as f:
+            f.write(output_filename)
             f.write("GENERAL INFORMATION\n")
             f.write(course_data["general_info"] + "\n\n")
 

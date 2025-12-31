@@ -1,4 +1,4 @@
-GENERAL INFORMATION
+mastering_gen_ai.txtGENERAL INFORMATION
 Course Name : Mastering GenAI
 Batch Schedule : 14-Jul-2025   To   03-Sep-2025
 Schedule : Mon - Thu

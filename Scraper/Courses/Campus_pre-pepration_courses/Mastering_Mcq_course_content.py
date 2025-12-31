@@ -24,7 +24,7 @@ content_text = content_div.text.strip()
 
 with open("Mastering_Mcq_course_content.txt", "w", encoding="utf-8") as f:
     if content_text:
-        f.write("Course Contents:\n")
+        f.write("Mastering Mcq course content:\n")
         f.write(content_text)
 
 driver.quit()

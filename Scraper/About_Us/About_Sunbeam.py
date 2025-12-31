@@ -13,6 +13,7 @@ driver.implicitly_wait(5)
 elements = driver.find_elements(By.CLASS_NAME, "main_info")
 
 with open("About_Sunbeam.txt", "w", encoding="utf-8") as f:
+    f.write("About Us")
     for el in elements:
         text = el.text.strip()
         if text:

@@ -1,4 +1,4 @@
-GENERAL INFORMATION
+mern_full_stack.txtGENERAL INFORMATION
 Course Name : MERN (FULL-STACK) DEVELOPMENT
 Batch Schedule : 02-Jun-2025   To   03-Jul-2025
 Schedule : Mon-Thu
