@@ -1,3 +1,5 @@
+Available internship courses 
+
 Available_internshipsTechnology | Aim | Prerequisite | Learning | Location
 Generative AI | Create intelligent applications with LLMs. | Python, Database | Advanced Python, LLM models, Ollama, LangChain, Streamlit, Prompt engineering, HuggingFaces | Hinjawadi
 Android Mobile App Development | Develop Android Mobile Application | Java Programming, Database, JS | Android Programming (Java), Express JS server | Hinjawadi
