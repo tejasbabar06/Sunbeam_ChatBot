@@ -1,3 +1,4 @@
+import os
 import chromadb
 from chromadb.config import Settings
 from config.settings import VECTOR_DB_PATH
@@ -11,6 +12,9 @@ def get_collection():
 
     if _collection is not None:
         return _collection
+
+    # ✅ Ensure vector DB directory exists
+    os.makedirs(VECTOR_DB_PATH, exist_ok=True)
 
     _client = chromadb.Client(
         Settings(
@@ -27,6 +31,10 @@ def get_collection():
 
 
 def store_documents(collection, documents, embed_model):
+    # ✅ Do not reinsert if already stored
+    if collection.count() > 0:
+        return
+
     texts = [doc.page_content for doc in documents]
     metadatas = [doc.metadata for doc in documents]
     ids = [f"doc_{i}" for i in range(len(texts))]

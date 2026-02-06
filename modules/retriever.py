@@ -1,7 +1,14 @@
-MAX_DOC_CHARS = 800     
-MAX_CONTEXT_CHARS = 2500  
+MAX_DOC_CHARS = 800        # per document
+MAX_CONTEXT_CHARS = 2500  # total context
 
-def retrieve_context(collection, embed_model, query, k=3):
+
+def retrieve_context(collection, embed_model, query: str, k: int = 3) -> str:
+    if not query.strip():
+        return ""
+
+    if collection.count() == 0:
+        return ""
+
     query_embedding = embed_model.embed_query(query)
 
     results = collection.query(
@@ -11,16 +18,19 @@ def retrieve_context(collection, embed_model, query, k=3):
 
     documents = results.get("documents", [[]])[0]
 
+    if not documents:
+        return ""
+
     cleaned_docs = []
     total_chars = 0
 
     for doc in documents:
-        doc = doc.strip()
+        if not doc:
+            continue
 
-        
+        doc = doc.strip()
         doc = doc[:MAX_DOC_CHARS]
 
-        
         if total_chars + len(doc) > MAX_CONTEXT_CHARS:
             break
 
