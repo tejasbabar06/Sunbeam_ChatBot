@@ -1,11 +1,7 @@
-from langchain.embeddings import init_embeddings
-from config.settings import EMBEDDING_MODEL, BASE_URL, DUMMY_API_KEY
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from config.settings import EMBEDDING_MODEL
 
 def get_embedding_model():
-    return init_embeddings(
-        model=EMBEDDING_MODEL,
-        provider="openai",
-        base_url=BASE_URL,
-        api_key=DUMMY_API_KEY,
-        check_embedding_ctx_length=False
+    return HuggingFaceEmbeddings(
+        model_name=EMBEDDING_MODEL
     )

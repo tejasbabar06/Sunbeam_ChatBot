@@ -1,13 +1,12 @@
-from langchain.chat_models import init_chat_model
+from langchain_groq import ChatGroq
 from langchain.agents import create_agent
-from config.settings import LLM_MODEL, BASE_URL, DUMMY_API_KEY
+from config.settings import LLM_MODEL
+import os
 
 def get_answer(context, question):
-    llm = init_chat_model(
+    llm = ChatGroq(
         model=LLM_MODEL,
-        model_provider="openai",
-        base_url=BASE_URL,
-        api_key=DUMMY_API_KEY
+        api_key=os.getenv("GROQ_API_KEY")
     )
 
     agent = create_agent(
@@ -18,14 +17,14 @@ You are a Sunbeam website assistant.
 
 Rules:
 - Answer ONLY from context
+- If any greeting message reply "I can serve you on Sunbeam website. Ask any question" and don't give any other information.
+- If you can't answer reply - "Sorry! I don't Know, Please ask another question" and don't give any other information.
 - Point-wise answers
 - No hallucination
 - If any batches related question give answer in table format
 - Be clear and concise
-- If relevant information is available,summurize clearly
 - If any heading or title bold or highlight it
 - Add bullets when possible
-- If any question releated to internship course give available internship courses technology
 
 CONTEXT:
 {context}
