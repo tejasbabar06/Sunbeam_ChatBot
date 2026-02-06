@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-
 import streamlit as st
 import tempfile
 import os
@@ -9,22 +8,20 @@ import os
 from reportlab.platypus import SimpleDocTemplate, Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
 
-from config.settings import DATA_PATH
-from modules.Loader import load_documents
+from config.settings import DATA_PATH, VECTOR_DB_PATH
+from modules.loader import load_documents   # ✅ FIXED CASE
 from modules.embeddings import get_embedding_model
 from modules.vectordb import get_collection, store_documents
 from modules.retriever import retrieve_context
 from modules.llm_agent import get_answer
 
 
-
-PDF_THRESHOLD = 800  
+PDF_THRESHOLD = 800
 
 
 st.set_page_config(page_title="Sunbeam ChatBot", layout="centered")
 st.title("Sunbeam AI Assistant")
 st.caption("Answers strictly from Sunbeam website")
-
 
 
 if "messages" not in st.session_state:
@@ -35,7 +32,6 @@ if "latest_long_answer" not in st.session_state:
 
 if "pdf_path" not in st.session_state:
     st.session_state.pdf_path = None
-
 
 
 if st.button("➕ New Chat", type="primary"):
@@ -60,13 +56,24 @@ def create_pdf(text: str, filename="Sunbeam_Answer.pdf"):
     return file_path
 
 
-
 @st.cache_resource
 def initialize():
+    # ✅ Ensure parent data folder exists
+    os.makedirs(VECTOR_DB_PATH, exist_ok=True)
+
     docs = load_documents(DATA_PATH)
+
+    # ✅ CRITICAL SAFETY CHECK
+    if not docs:
+        raise ValueError(
+            f"No documents found in DATA_PATH: {DATA_PATH}"
+        )
+
     embed_model = get_embedding_model()
     collection = get_collection()
+
     store_documents(collection, docs, embed_model)
+
     return collection, embed_model
 
 
@@ -85,6 +92,7 @@ if user_input:
     st.session_state.messages.append(
         {"role": "user", "content": user_input}
     )
+
     with st.chat_message("user"):
         st.markdown(user_input)
 
@@ -98,7 +106,6 @@ if user_input:
     with st.chat_message("assistant"):
         st.markdown(answer)
 
-    
     if len(answer) > PDF_THRESHOLD:
         st.session_state.latest_long_answer = answer
     else:
@@ -106,16 +113,13 @@ if user_input:
         st.session_state.pdf_path = None
 
 
-
 if st.session_state.latest_long_answer:
-
-    st.write("")  # spacing
+    st.write("")
 
     if st.button("📄 Save this answer as PDF", type="secondary"):
         st.session_state.pdf_path = create_pdf(
             st.session_state.latest_long_answer
         )
-
 
 
 if st.session_state.pdf_path:
